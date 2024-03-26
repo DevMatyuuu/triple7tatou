@@ -12,7 +12,7 @@ export default function Hero() {
         </div>
         <div className='flex gap-9'>
           <button className='py-4 px-6 border-2 border-white'>VIEW MY WORK</button>
-          <button className='py-4 px-9 hover:bg-yellow-500 bg-yellow-600'>CONTACT ME</button>
+          <button className='py-4 px-9 hover:bg-red-500 bg-red-700'>CONTACT ME</button>
         </div>
         <Lottie animationData={scrollAnimation} className='absolute bottom-12' />
       </div>
