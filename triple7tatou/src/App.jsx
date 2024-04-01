@@ -1,14 +1,14 @@
 import React from 'react'
 import Navbar from './components/Navbar'
-import Hero from './components/Hero'
-import About from './components/About'
+import Home from './pages/Home'
+import Footer from './components/Footer'
 
 export default function App() {
   return (
     <div className='font-voces'>
       <Navbar />
-      <Hero />
-      <About />
+      <Home />
+      <Footer />
     </div>
   )
 }
