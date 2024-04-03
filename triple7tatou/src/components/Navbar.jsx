@@ -10,7 +10,7 @@ export default function Navbar() {
   }, []);
 
   const navBG = () => {
-    if (window.scrollY >= 180) {
+    if (window.scrollY >= 80) {
       setIsScroll("");
     } else {
       setIsScroll(null);
@@ -18,7 +18,7 @@ export default function Navbar() {
   };
 
   return (
-    <div className={`${window.scrollY >= 180 ? 'text-white bg-black/80 duration-500' : 'text-white bg-transparent'} z-50 text-sm flex fixed py-4 lg:py-8 px-8 lg:px-0 bg-transparent w-full text-white`}>
+    <div className={`${window.scrollY >= 80 ? 'text-white bg-black/80 duration-500' : 'text-white bg-transparent'} z-50 text-sm flex fixed py-4 lg:py-8 px-8 lg:px-0 w-full text-white`}>
       <div className='flex lg:justify-center justify-between items-center w-full gap-28'>
         <div className='hidden lg:flex items-center gap-28 uppercase'>
           {navLinksLeft.map((link) => (

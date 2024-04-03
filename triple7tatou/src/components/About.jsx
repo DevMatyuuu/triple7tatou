@@ -13,6 +13,7 @@ export default function About() {
           <p className='text-xl px-28 text-justify indent-10'>Hey there, I'm Moreno, also known as Mark Jerome, or simply "MJ". I'm a versatile artist, specializing in tattooing, portrait art, and piercing. Currently, I'm pursuing a degree in Multimedia Arts, with a keen focus on honing my skills in graphic design and photography. I'm driven to expand my expertise and gain hands-on experience in these fields.</p>
           <p className='text-xl px-28 text-justify indent-10'>To showcase my talents and build my portfolio for future endeavors, I've created the Triple7Tatou website. It serves as a platform for prospective clients to view my work and will also be a valuable asset when applying for positions as a main artist at tattoo shops.</p>
         </div>
+
       </div>
     </div>
   )

@@ -5,13 +5,14 @@ import scrollAnimation from '../assets/scroll-animation.json'
 export default function Hero() {
 
   return (
-    <div className='flex flex-col bg-heroBG bg-cover h-[100vh] text-white w-full px-8 lg:px-0'>
+    <div className='flex flex-col bg-heroBG bg-fixed bg-cover h-[100vh] text-white w-full px-8 lg:px-0'>
       <div className='flex flex-col items-center lg:justify-center pt-40 lg:pt-0 h-full gap-10'>
         <div className='flex flex-col items-center'>
-          <h2 className='lg:text-2xl'>Triple<span className='text-red-500'>7</span>Tatou</h2>
+          <h2 className='lg:text-2xl'>Triple7Tatou</h2>
           <h1 className='text-[60px] lg:text-[100px] text-center shadow-2xl'>Elevate Your Ink Experience.</h1>
+          <h2 className='lg:text-xl'>Tattoo & Piercing by <span className='underline underline-offset-2 cursor-pointer'>MJ Moreno</span></h2>
         </div>
-        <div className='flex lg:flex-row flex-col gap-9 w-full lg:w-auto'>
+        <div className='flex lg:flex-row flex-col gap-7 w-full lg:w-auto'>
           <button className='py-4 px-6 lg:text-base text-sm border-2 border-white hover:bg-white/20 duration-300 shadow-2xl'>VIEW MY WORK</button>
           <button className='py-4 px-9 lg:text-base text-sm hover:bg-red-500 bg-red-700 duration-300 shadow-2xl'>CONTACT ME</button>
         </div>

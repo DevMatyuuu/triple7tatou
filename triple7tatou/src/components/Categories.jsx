@@ -1,6 +1,7 @@
 import React from 'react'
 import category1 from '../assets/image-category1.webp'
 import category2 from '../assets/image-category2.webp'
+import category3 from '../assets/image-category3.webp'
 
 export default function Categories() {
   return (
@@ -15,7 +16,7 @@ export default function Categories() {
           <span className='absolute text-white font-semibold text-4xl uppercase text-center'>Minimalist Tattoos</span>
         </div>
         <div className='flex justify-center items-center w-full group overflow-hidden duration-500 cursor-pointer h-full'>
-          <img src={category1} alt='category-1' className='h-full w-full group-hover:scale-110 duration-500 group-hover:brightness-75 brightness-50'/>
+          <img src={category3} alt='category-1' className='h-full w-full group-hover:scale-110 duration-500 group-hover:brightness-75 brightness-[45%]'/>
           <span className='absolute text-white font-semibold text-4xl uppercase'>Realistic Tattoos</span>
         </div>
       </div>
