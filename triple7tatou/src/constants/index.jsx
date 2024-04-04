@@ -1,21 +1,27 @@
 export const navLinksLeft = [
   {
     id: 1,
-    label: 'Home'
+    label: 'Home',
+    route: '/'
   },
   {
     id: 2,
-    label: 'Tattoos'
+    label: 'Tattoos',
+    route: '/tattoos'
   },
 ]
 
 export const navLinksRight = [
   {
     id: 1,
-    label: 'About'
+    label: 'About',
+    section: 'about',
+    offset: 0
   },
   {
     id: 2,
-    label: 'Contact'
+    label: 'Contact',
+    section: 'contact',
+    offset: 180
   },
 ]

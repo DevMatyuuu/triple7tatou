@@ -3,8 +3,8 @@ import myPic from '../assets/image-aboutme.webp'
 
 export default function About() {
   return (
-    <div className='flex items-start w-full'>
-      <div className='w-[50%]'>
+    <div id='about' className='flex items-start w-full'>
+      <div className='lg:w-[50%] w-full'>
         <img src={myPic} alt='image-about-me' className='w-full'/>
       </div>
       <div className='flex flex-col gap-10 justify-center items-center w-[50%] py-48'>
