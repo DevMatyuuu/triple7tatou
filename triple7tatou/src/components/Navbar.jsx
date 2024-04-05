@@ -43,7 +43,7 @@ export default function Navbar() {
     initial={{ opacity: 1 }}
     animate={{ opacity: isNavbarVisible ? 1 : 0 }}
     transition={{ duration: 0.3 }} 
-    className={`${window.scrollY >= 80 ? 'text-white bg-black/80 duration-500' : 'text-white bg-transparent'} ${!isNavbarVisible ? 'bg-transparent' : 'bg-black/80'} z-50 text-sm flex fixed py-4 lg:py-4 px-8 lg:px-0 w-full text-white`}>
+    className={`${window.scrollY >= 80 ? 'text-white bg-[#3d3c3d] duration-500' : 'text-white bg-transparent'} ${!isNavbarVisible ? 'bg-transparent' : 'bg-[#3d3c3d]'} z-50 text-sm flex fixed py-4 lg:py-4 px-8 lg:px-0 w-full text-white`}>
       <div className='flex lg:justify-center justify-between items-center w-full gap-28'>
         <div className='hidden lg:flex items-center gap-28 uppercase'>
           {navLinksLeft.map((link) => (
