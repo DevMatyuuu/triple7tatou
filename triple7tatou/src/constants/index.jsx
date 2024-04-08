@@ -1,15 +1,15 @@
-export const navLinksLeft = [
-  {
-    id: 1,
-    label: 'Home',
-    route: '/'
-  },
-  {
-    id: 2,
-    label: 'Tattoos',
-    route: '/tattoos'
-  },
-]
+export const servicesDropdown = [
+    {
+      id: 1,
+      label: 'Tattoo',
+      route: '/tattoo'
+    },
+    {
+      id: 2,
+      label: 'Piercing',
+      route: '/Piercing'
+    },
+  ]
 
 export const navLinksRight = [
   {

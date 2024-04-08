@@ -13,7 +13,7 @@ export default function App() {
         <Navbar />
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/tattoos" element={<Tattoos />} />
+            <Route path="/tattoo" element={<Tattoos />} />
           </Routes>
       </BrowserRouter>
       <Footer />

@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import Contact from '../components/Contact'
 import LoaderPage from '../components/LoaderPage'
-import TattooGallery from '../components/TattooGallery'
+import Gallery from '../components/TattooGallery'
 
-export default function Tattoos() {
+export default function Piercings() {
   const [loading, setLoading] = useState(true)
 
   useEffect(() => { 
@@ -16,7 +16,7 @@ export default function Tattoos() {
     <div>
       <LoaderPage loading={loading}/>
       <div>
-        <TattooGallery />
+        <Gallery />
         <Contact />
       </div>
     </div>
