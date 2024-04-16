@@ -5,12 +5,13 @@ import logo from '../assets/T7T-logo.webp'
 import { motion } from 'framer-motion'
 import { Link as Smooth } from 'react-scroll'
 import { Link } from 'react-router-dom'
+import { MdKeyboardArrowDown } from "react-icons/md";
 
 export default function Navbar() {
   const [isScroll, setIsScroll] = useState(false);
   const [isNavbarVisible, setIsNavbarVisible] = useState(true);
   const [prevScrollPos, setPrevScrollPos] = useState(0);
-  const [show, setShow] = useState(false);
+  
 
   useEffect(() => {
     window.addEventListener("scroll", navBG);
@@ -51,8 +52,11 @@ export default function Navbar() {
               Home
             </Link>
             <div className='relative cursor-pointer duration-300 group'>
-                <span>Services</span>
-                <div className={`${window.scrollY >= 80 ? 'text-white bg-[#3d3c3d] duration-500 pt-10 px-2' : 'text-white bg-transparent'} pt-5 flex flex-col absolute w-32 text-white`}>
+              <div className='flex items-center gap-1'>
+              <span>Services</span>
+              <MdKeyboardArrowDown className='size-5'/>
+              </div>
+              <div className={`${window.scrollY >= 80 ? 'text-white bg-[#3d3c3d] duration-500 pt-10 px-2' : 'text-white bg-transparent pt-5'} flex flex-col absolute w-32 text-white`}>
                 {servicesDropdown.map((dropdown) => (
                   <div className='hidden text-base group-hover:flex flex-col w-full text-white'>
                     <Link to={dropdown.route} className={`${window.scrollY >= 80 ? 'hover:bg-[#525152] hover:rounded-lg pl-3' : 'hover:text-red-500'} py-2 text-start mb-5`}>{dropdown.label}</Link>
@@ -61,7 +65,7 @@ export default function Navbar() {
               </div>
             </div>
         </div>
-        <img src={logo} alt='logo' className='lg:h-[75px] h-12 brightness-200'/>
+        <img src={logo} alt='logo' className='lg:h-[75px] h-12 brightness-200 -ml-10'/>
         <div className='lg:hidden block'>
           <Hamburger size={28}/>
         </div>
