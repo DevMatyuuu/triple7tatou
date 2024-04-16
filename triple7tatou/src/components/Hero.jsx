@@ -15,7 +15,7 @@ export default function Hero() {
           <h2 className='lg:text-xl lg:pt-0 pt-5 font-voces'>Tattoo & Piercing by <span className='underline underline-offset-2 cursor-pointer hover:text-red-500 duration-300'>MJ Moreno</span></h2>
         </div>
         <div className='flex lg:flex-row flex-col gap-7 w-full lg:w-auto lg:pt-0 pt-14'>
-          <Link to='/tattoos' className='py-4 px-6 lg:text-base text-sm border-2 text-center border-white hover:bg-white/20 duration-300 shadow-2xl font-voces'>VIEW MY WORK</Link>
+          <Link to='/tattoo' className='py-4 px-6 lg:text-base text-sm border-2 text-center border-white hover:bg-white/20 duration-300 shadow-2xl font-voces'>VIEW MY WORK</Link>
           <Smooth to={'contact'} smooth={true} className='cursor-pointer py-4 px-9 lg:text-base text-center text-sm hover:bg-red-500 bg-red-700 duration-300 shadow-2xl font-voces'>CONTACT ME</Smooth>
         </div>
         <Lottie animationData={scrollAnimation} className='hidden lg:block absolute bottom-12'/>

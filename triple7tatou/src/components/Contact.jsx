@@ -8,7 +8,7 @@ export default function Contact() {
           <span className='absolute flex lg:pt-20 text-4xl justify-center text-center pt-36 text-white z-[1] opacity-90 rounded-xl inset-0.5 px-8 lg:px-0 bg-[#323132] font-[Engraver]'>Need a Tattoo Artist to fulfill your dream tattoo?</span>
           <div class="absolute lg:w-56 lg:h-48 h-60 w-60 bg-white blur-[50px] left-0 lg:group-hover:left-[1000px] duration-500 lg:-top-1/2 -top-60"></div>
           <div class="absolute w-56 h-48 bg-white blur-[50px] right-0 lg:group-hover:right-[1000px] duration-500 lg:-bottom-1/2 -bottom-48"></div>
-          <span className='absolute flex justify-center inset-0.5 lg:pt-[140px] pt-60 text-white/80 z-[2]'>Say hi to me via Email or Facebook Messenger</span>
+          <span className='absolute flex justify-center inset-0.5 xl:pt-[140px] lg:pt-[180px] pt-60 text-white/80 z-[2]'>Say hi to me via Email or Facebook Messenger</span>
         </div>
         <div className='flex mx-auto lg:mt-64 mt-80 gap-10 z-40'>
           <button className='h-10 w-40 border-white border-2 text-white hover:bg-white/30 duration-500'>Messenger</button>

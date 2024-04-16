@@ -4,6 +4,7 @@ import Home from './pages/Home'
 import Footer from './components/Footer'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Tattoos from './pages/Tattoos'
+import CategorizedTattoos from './pages/CategorizedTattoos'
 
 
 export default function App() {
@@ -14,6 +15,7 @@ export default function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/tattoo" element={<Tattoos />} />
+            <Route path="/tattoo/:label" element={<CategorizedTattoos />} />
           </Routes>
       </BrowserRouter>
       <Footer />
