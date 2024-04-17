@@ -1,27 +1,32 @@
-import { onSnapshot } from "firebase/firestore";
+import { onSnapshot, query, orderBy, startAfter, limit, getDocs } from "firebase/firestore";
 import { useEffect, useState } from "react";
 import { tattooGalleryCollection } from "../firebase/firebase";
 
 function useTattooGallery() {
   const [tattooGallery, setTattooGallery] = useState([]);
+  const [lastDoc, setLastDoc] = useState(null);
 
-  useEffect(
-    () => {
-    const unsubscribe = onSnapshot(tattooGalleryCollection, (snapshot) => {
-     setTattooGallery( 
-      snapshot.docs.map((doc) => {
-        return {
-          id: doc.id,
-          ...doc.data(),
-        }
-      })
-     );
-  });
-  return () => unsubscribe();
-},
-  []
-);
+  const loadMore = async () => {
+    let newQuery = query(tattooGalleryCollection, orderBy("id"), limit(9));
+    if (lastDoc) {
+      newQuery = query(tattooGalleryCollection, orderBy("id"), startAfter(lastDoc), limit(9));
+    }
 
-  return { tattooGallery };
+    const snapshot = await getDocs(newQuery);
+    const newDocs = snapshot.docs.map((doc) => ({
+      id: doc.id,
+      ...doc.data(),
+    }));
+
+    setLastDoc(snapshot.docs[snapshot.docs.length - 1]);
+    setTattooGallery((prev) => [...prev, ...newDocs]);
+  };
+
+  useEffect(() => {
+    loadMore();
+  }, []);
+
+  return { tattooGallery, loadMore };
 }
-export default useTattooGallery
+
+export default useTattooGallery;

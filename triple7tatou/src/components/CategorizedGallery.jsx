@@ -12,7 +12,7 @@ export default function CategorizedGallery() {
   const [open, setOpen] = useState(false);
   const [selectedTattooValue, setSelectedTattoovalue] = useState()
 
-  const { tattooGallery } = useTattooGallery();
+  const { tattooGallery, loadMore } = useTattooGallery();
 
   const handleOpen = (id) => {
     setOpen(!open)
@@ -28,9 +28,9 @@ export default function CategorizedGallery() {
   const selectedCategory = tattooGallery.filter( tattoo => tattoo.category === label)
 
   return (
-    <div className='flex flex-col justify-center gap-28 lg:px-60 px-8 bg-black text-white h-auto py-48'>
+    <div className='flex flex-col justify-center items-center gap-16 xl:gap-28 lg:px- px-8 bg-black text-white h-auto xl:py-48 py-36 w-full mx-w-[800px]'>
       <h1 className={`${!open ? '' : 'brightness-50'} mx-auto lg:text-7xl text-5xl font-[Engraver] first-letter:uppercase`}>{label} Tattoo</h1>
-      <div className={`${!open ? '' : 'brightness-50'} grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-4 gap-10 duration-300`}>
+      <div className={`${!open ? '' : 'brightness-50'} grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-10 duration-300`}>
         {selectedCategory.map((tattoo) => (
           <div key={tattoo.id} onClick={() => handleOpen(tattoo.id)} className='flex justify-center lg:justify-start items-center mx-auto lg:mx-0 border-[#3d3c3d] border-[10px] xl:h-[400px] xl:w-[350px] lg:h-auto lg:w-auto h-80 w-80 relative group overflow-hidden'>
             {tattoo.image 
@@ -47,6 +47,9 @@ export default function CategorizedGallery() {
             }
           </div>
         ))}
+      </div>
+      <div className='mx-auto'>
+          <button onClick={loadMore} className='bg-white px-8 py-4 text-black font-semibold hover:bg-white/50 duration-300 hover:text-white'>Load more</button>
       </div>
       <div className='relative'>
         <Dialog open={open} handler={handleOpen} className='fixed inset-0 flex flex-col items-center py-14 px-14 h-[900px] max-w-max mx-auto justify-center my-auto outline-none bg-[#3d3c3d]'>

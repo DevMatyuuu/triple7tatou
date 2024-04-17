@@ -49,7 +49,7 @@ export default function Navbar() {
     initial={{ opacity: 1 }}
     animate={{ opacity: isNavbarVisible ? 1 : 0 }}
     transition={{ duration: 0.3 }} 
-    className={`${window.scrollY >= 80 ? 'text-white bg-[#3d3c3d] duration-500' : 'text-white bg-transparent'} z-50 text-base flex fixed py-4 lg:py-4 px-8 lg:px-0 w-full text-white`}>
+    className={`${window.scrollY >= 80 ? 'text-white bg-[#3d3c3d] duration-500' : 'text-white bg-transparent'} z-50 text-base flex fixed py-8 lg:py-4 px-8 lg:px-0 w-full text-white`}>
       <div className='flex lg:justify-center justify-between items-center w-full gap-28'>
         <div className='hidden lg:flex items-center gap-28 uppercase'>
             <Link to={'/'} onClick={scrollToTop} className='cursor-pointer hover:text-red-500 duration-300'>
@@ -69,7 +69,7 @@ export default function Navbar() {
               </div>
             </div>
         </div>
-        <img src={logo} alt='logo' className='lg:h-[75px] h-12 brightness-200 -ml-10'/>
+        <img src={logo} alt='logo' className='lg:h-[75px] h-12 brightness-200'/>
         <div className='lg:hidden block'>
           <Hamburger size={28}/>
         </div>
