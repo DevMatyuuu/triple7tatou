@@ -52,10 +52,10 @@ export default function CategorizedGallery() {
           <button onClick={loadMore} className='bg-white px-8 py-4 text-black font-semibold hover:bg-white/50 duration-300 hover:text-white'>Load more</button>
       </div>
       <div className='relative'>
-        <Dialog open={open} handler={handleOpen} className='fixed inset-0 flex flex-col items-center py-14 px-14 h-[900px] max-w-max mx-auto justify-center my-auto outline-none bg-[#3d3c3d]'>
-          <IoClose onClick={handleClose} className='absolute top-3 right-4 text-white size-8 z-50 cursor-pointer hover:text-red-500'/>
-          <DialogBody className='h-full w-auto'>
-            <img src={selectedTattooValue?.image} className='h-full'/>
+        <Dialog open={open} handler={handleOpen} className='fixed inset-0 flex flex-col items-center xl:py-14 xl:px-14 xl:h-[900px] h-auto w-auto max-w-max mx-auto justify-center my-auto outline-none bg-black xl:bg-[#3d3c3d]'>
+          <IoClose onClick={handleClose} className='absolute xl:top-3 xl:right-4 top-6 right-5 text-white size-8 z-50 cursor-pointer hover:text-red-500'/>
+          <DialogBody className='h-full w-auto items-center flex'>
+            <img src={selectedTattooValue?.image} className='xl:h-full h-max w-full'/>
           </DialogBody>
         </Dialog>
       </div>

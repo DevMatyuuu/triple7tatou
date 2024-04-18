@@ -7,7 +7,8 @@ export default {
   theme: {
     extend: {
       backgroundImage: { 
-        "heroBG" : "url('../src/assets/hero-bg.webp')"
+        "heroBG" : "url('../src/assets/hero-bg.webp')",
+        "heroBGmobile" : "url('../src/assets/heroBGmobile.webp')"
       },
       fontFamily: {
         voces: ['Voces', 'sans-serif'],

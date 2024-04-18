@@ -12,6 +12,7 @@ export default function Navbar() {
   const [isNavbarVisible, setIsNavbarVisible] = useState(true);
   const [prevScrollPos, setPrevScrollPos] = useState(0);
   const [open, setOpen] = useState(false)
+  const [openServices, setOpenServices] = useState(false)
   
 
   useEffect(() => {
@@ -51,7 +52,7 @@ export default function Navbar() {
     initial={{ opacity: 1 }}
     animate={{ opacity: isNavbarVisible ? 1 : 0 }}
     transition={{ duration: 0.3 }} 
-    className={`${window.scrollY >= 80 ? 'text-white bg-[#3d3c3d] duration-500' : 'text-white bg-transparent'} z-50 text-base flex fixed py-8 lg:py-4 px-8 lg:px-0 w-full text-white`}>
+    className={`${window.scrollY >= 80 ? 'text-white bg-[#3d3c3d] duration-500' : 'text-white bg-transparent'} z-50 text-base flex fixed py-4 lg:py-4 px-8 lg:px-0 w-full text-white`}>
       <div className='flex lg:justify-center justify-between items-center w-full gap-28'>
         <div className='hidden lg:flex items-center gap-28 uppercase'>
             <Link to={'/'} onClick={scrollToTop} className='cursor-pointer hover:text-red-500 duration-300'>
@@ -73,7 +74,7 @@ export default function Navbar() {
         </div>
         <img src={logo} alt='logo' className='lg:h-[75px] h-12 brightness-200 z-50'/>
         <div className='lg:hidden block'>
-          <Hamburger size={28} toggle={setOpen} toggled={open}/>
+          <Hamburger size={28} toggle={setOpen} toggled={open} onClick={() => setOpenServices(false)}/>
         </div>
         <div className='hidden lg:flex items-center gap-28 uppercase'>
           {navLinksRight.map((link) => (
@@ -90,11 +91,41 @@ export default function Navbar() {
         </div>
       </div>
     </motion.div>
-    <div className={`${open ? 'left-0' : 'left-[4000px]'} lg:hidden block absolute duration-500 text-white h-full w-full bg-black z-40 pt-28`}>
-      <div className='flex justify-center py-20 text-3xl'>
-        <Link to={'/'} onClick={() => {scrollToTop(); setOpen(false)}} className='cursor-pointer hover:text-red-500 duration-300'>
+    <div className={`${open ? 'left-0' : '-left-[1000px]'} ${window.scrollY >= 80 ? 'bg-[#3d3c3d]' : 'bg-black'} lg:hidden block duration-300 fixed top-0 w-full h-screen z-40`}>
+      <div className='flex flex-col pl-8 gap-8 py-40 text-6xl text-white'>
+        <Link to={'/'} onClick={() => {scrollToTop(); setOpen(false)}} className='cursor-pointer hover:text-red-500 duration-300 w-max'>
           Home
         </Link>
+        <div className='relative cursor-pointer duration-300 group'>
+          <div className='flex items-center text-6xl gap-1 w-max' onClick={() => setOpenServices(!openServices)}>
+            <span className='hover:text-red-500'>Services</span>
+            <MdKeyboardArrowDown className='size-5'/>
+          </div>
+          {!openServices ? 
+          <div className='transition-all duration-300 flex flex-col w-32 gap-5 h-20 items-center justify-center text-white mt-6'>
+            {servicesDropdown.map((dropdown) => ( 
+              <div className='text-2xl w-full agp-2 text-white h-20'>
+                <Link to={dropdown.route} onClick={() => {scrollToTop(); setOpen(false)}} className=''>{dropdown.label}</Link>
+              </div>
+            ))}
+          </div> 
+          : ''}
+        </div>
+        <div className='flex-col items-center uppercase'>
+          {navLinksRight.map((link) => (
+            <div key={link.id} className='mb-12 duration-300'>
+              <Smooth
+              to={link.section} 
+              smooth={true} 
+              offset={link.offset}
+              duration={500}
+              className='cursor-pointer hover:text-red-500'
+              onClick={() => setOpen(false)}>
+                {link.label}
+              </Smooth>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
     </>

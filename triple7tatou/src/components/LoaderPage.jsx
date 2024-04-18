@@ -4,7 +4,7 @@ import logo from '../assets/T7T-logo.webp'
 
 export default function LoaderPage({loading}) {
   return (
-    <div className={`${loading ? 'top-0' : '-top-[2500px]' } duration-500 ease-in-out flex justify-center fixed bg-black  h-full w-full z-50`}>
+    <div className={`${loading ? 'top-0' : '-top-[5000px]' } duration-500 ease-in-out flex justify-center fixed bg-black  h-full w-full z-50`}>
       <div className='flex flex-col justify-center items-center gap-20'>
         <img src={logo} alt='logo' className='lg:h-[300px] h-40'/>
         <div className='flex items-center'>

@@ -7,7 +7,7 @@ import { Link as Smooth } from 'react-scroll'
 export default function Hero() {
 
   return (
-    <div className='flex flex-col bg-heroBG bg-fixed bg-cover h-auto lg:h-[100vh] text-white w-full px-8 lg:px-0 font-[Engraver]'>
+    <div className='flex flex-col lg:bg-heroBG bg-heroBGmobile bg-fixed bg-cover h-auto lg:h-[100vh] text-white w-full px-8 lg:px-0 font-[Engraver]'>
       <div className='flex flex-col items-center lg:justify-center py-40 lg:pt-0 h-full gap-10'>
         <div className='flex flex-col items-center lg:px-16'>
           <h2 className='lg:text-3xl text-xl'>Triple7Tatou</h2>
