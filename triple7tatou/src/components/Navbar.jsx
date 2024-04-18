@@ -11,6 +11,7 @@ export default function Navbar() {
   const [isScroll, setIsScroll] = useState(false);
   const [isNavbarVisible, setIsNavbarVisible] = useState(true);
   const [prevScrollPos, setPrevScrollPos] = useState(0);
+  const [open, setOpen] = useState(false)
   
 
   useEffect(() => {
@@ -45,6 +46,7 @@ export default function Navbar() {
   }
 
   return (
+    <>
     <motion.div 
     initial={{ opacity: 1 }}
     animate={{ opacity: isNavbarVisible ? 1 : 0 }}
@@ -69,9 +71,9 @@ export default function Navbar() {
               </div>
             </div>
         </div>
-        <img src={logo} alt='logo' className='lg:h-[75px] h-12 brightness-200'/>
+        <img src={logo} alt='logo' className='lg:h-[75px] h-12 brightness-200 z-50'/>
         <div className='lg:hidden block'>
-          <Hamburger size={28}/>
+          <Hamburger size={28} toggle={setOpen} toggled={open}/>
         </div>
         <div className='hidden lg:flex items-center gap-28 uppercase'>
           {navLinksRight.map((link) => (
@@ -88,5 +90,13 @@ export default function Navbar() {
         </div>
       </div>
     </motion.div>
+    <div className={`${open ? 'left-0' : 'left-[4000px]'} lg:hidden block absolute duration-500 text-white h-full w-full bg-black z-40 pt-28`}>
+      <div className='flex justify-center py-20 text-3xl'>
+        <Link to={'/'} onClick={() => {scrollToTop(); setOpen(false)}} className='cursor-pointer hover:text-red-500 duration-300'>
+          Home
+        </Link>
+      </div>
+    </div>
+    </>
   )
 }
