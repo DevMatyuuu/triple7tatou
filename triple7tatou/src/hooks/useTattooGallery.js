@@ -11,17 +11,19 @@ function useTattooGallery() {
     if (lastDoc) {
       newQuery = query(tattooGalleryCollection, orderBy("id"), startAfter(lastDoc), limit(9));
     }
-
+  
     const snapshot = await getDocs(newQuery);
-    const newDocs = snapshot.docs.map((doc) => ({
-      id: doc.id,
-      ...doc.data(),
-    }));
-
-    setLastDoc(snapshot.docs[snapshot.docs.length - 1]);
-    setTattooGallery((prev) => [...prev, ...newDocs]);
+    if (!snapshot.empty) {
+      const newDocs = snapshot.docs.map((doc) => ({
+        id: doc.id,
+        ...doc.data(),
+      }));
+  
+      setLastDoc(snapshot.docs[snapshot.docs.length - 1]);
+      setTattooGallery((prev) => [...prev, ...newDocs]);
+    }
   };
-
+  
   useEffect(() => {
     loadMore();
   }, []);

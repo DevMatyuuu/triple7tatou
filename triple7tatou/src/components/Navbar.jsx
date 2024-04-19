@@ -12,7 +12,7 @@ export default function Navbar() {
   const [isNavbarVisible, setIsNavbarVisible] = useState(true);
   const [prevScrollPos, setPrevScrollPos] = useState(0);
   const [open, setOpen] = useState(false)
-  const [openServices, setOpenServices] = useState(false)
+  const [openServices, setOpenServices] = useState(true)
   
 
   useEffect(() => {
@@ -111,7 +111,7 @@ export default function Navbar() {
           </div> 
           : ''}
         </div>
-        <div className='flex-col items-center uppercase'>
+        <div className='flex-col items-center'>
           {navLinksRight.map((link) => (
             <div key={link.id} className='mb-12 duration-300'>
               <Smooth
