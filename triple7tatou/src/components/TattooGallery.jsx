@@ -26,7 +26,7 @@ export default function TattooGallery() {
   }
 
   return (
-    <div className='flex flex-col justify-center items-center gap-16 xl:gap-28 lg:px-0 px-8 bg-black text-white h-auto xl:py-48 py-36 w-full mx-w-[800px]'>
+    <div className='flex flex-col justify-center items-center gap-16 xl:gap-28 lg:px-0 px-8 bg-black text-white h-auto xl:pt-48 xl:py-0 py-36 w-full mx-w-[800px]'>
         <h1 className={`${!open ? '' : 'brightness-50'} mx-auto lg:text-7xl text-5xl font-[Engraver]`}>Tattoo Gallery</h1>
         <div className={`${!open ? '' : 'brightness-50'} grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-10 duration-300`}>
           {tattooGallery.map((tattoo) => (

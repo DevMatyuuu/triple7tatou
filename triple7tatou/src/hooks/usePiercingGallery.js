@@ -1,27 +1,34 @@
-import { onSnapshot } from "firebase/firestore";
+import { query, orderBy, startAfter, limit, getDocs } from "firebase/firestore";
 import { useEffect, useState } from "react";
 import { piercingGalleryCollection } from "../firebase/firebase";
 
-function useServices() {
+function usePiercingGallery() {
   const [piercingGallery, setPiercingGallery] = useState([]);
+  const [lastDoc, setLastDoc] = useState(null);
 
-  useEffect(
-    () => {
-    const unsubscribe = onSnapshot(piercingGalleryCollection, (snapshot) => {
-     setPiercingGallery( 
-      snapshot.docs.map((doc) => {
-        return {
-          id: doc.id,
-          ...doc.data(),
-        }
-      })
-     );
-  });
-  return () => unsubscribe();
-},
-  []
-);
+  const loadMore = async () => {
+    let newQuery = query(piercingGalleryCollection, orderBy("id"), limit(9));
+    if (lastDoc) {
+      newQuery = query(piercingGalleryCollection, orderBy("id"), startAfter(lastDoc), limit(9));
+    }
+  
+    const snapshot = await getDocs(newQuery);
+    if (!snapshot.empty) {
+      const newDocs = snapshot.docs.map((doc) => ({
+        id: doc.id,
+        ...doc.data(),
+      }));
+  
+      setLastDoc(snapshot.docs[snapshot.docs.length - 1]);
+      setPiercingGallery((prev) => [...prev, ...newDocs]);
+    }
+  };
+  
+  useEffect(() => {
+    loadMore();
+  }, []);
 
-  return { piercingGallery };
+  return { piercingGallery, loadMore };
 }
-export default useServices
+
+export default usePiercingGallery;
