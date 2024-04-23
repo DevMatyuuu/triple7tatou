@@ -14,11 +14,18 @@ return (
         </div>
         <div className='flex flex-col items-center gap-4 lg:w-[20%]'>
           <span className='font-[Engraver] text-3xl'>Hours</span>
-          <p className='text-base'>Open 24/7 Daily (Monday - Sunday)</p>
+          <div className='flex flex-col'>
+            <span>Open 24/7 Daily</span>
+            <span>(Monday - Sunday)</span>
+          </div>
         </div>
         <img src={logo} alt='logo' className='hidden lg:block lg:w-36 lg:h-24'/>
-        <div className='lg:w-[20%]'>
+        <div className='flex flex-col items-center gap-4 lg:w-[20%]'>
           <span className='font-[Engraver] text-3xl'>Contact</span>
+          <div className='flex flex-col'>
+            <span>MJ Moreno</span>
+            <span>09310017746</span>
+          </div>
         </div>
         <div className='lg:w-[20%]'>
           <span className='font-[Engraver] text-3xl'>Socials</span>
