@@ -14,17 +14,17 @@ export default function About() {
       <div className='w-full lg:hidden block'>
         <img src={myPicMobile} alt='image-about-me' className='w-full'/>
       </div>
-      <div className='flex flex-col gap-10 justify-center items-center lg:w-[50%] lg:py-48 py-10'>
-        <h2 className='lg:block hidden text-7xl font-[Engraver] text-red-700'>Meet the Artist</h2>
+      <div className='flex flex-col gap-10 lg:gap-5 xl:gap-5 2xl:gap-14 justify-center items-center lg:w-[50%] lg:pt-20 xl:pt-14 2xl:pt-24 pt-10'>
+        <h2 className='lg:block hidden 2xl:text-7xl xl:text-6xl lg:text-5xl font-[Engraver] text-red-700'>Meet the Artist</h2>
         <div className='flex flex-col gap-10 lg:text-black text-white'>
-          <p className='lg:text-xl lg:px-28 px-8 text-justify indent-10'>Hey there, I'm Moreno, also known as Mark Jerome, or simply "MJ". I'm a versatile artist, specializing in tattooing, portrait art, and piercing. Currently, I'm pursuing a degree in Multimedia Arts, with a keen focus on honing my skills in graphic design and photography. I'm driven to expand my expertise and gain hands-on experience in these fields.</p>
-          <p className='lg:text-xl lg:px-28 px-8 text-justify indent-10'>To showcase my talents and build my portfolio for future endeavors, I've created the Triple7Tatou website. It serves as a platform for prospective clients to view my work and will also be a valuable asset when applying for positions as a main artist at tattoo shops.</p>
+          <p className='2xl:text-xl lg:text-base xl:text-[18px] 2xl:px-20 px-8 text-justify indent-10'>Hey there, I'm Moreno, also known as Mark Jerome, or simply "MJ". I'm a versatile artist, specializing in tattooing, portrait art, and piercing. Currently, I'm pursuing a degree in Multimedia Arts, with a keen focus on honing my skills in graphic design and photography. I'm driven to expand my expertise and gain hands-on experience in these fields.</p>
+          <p className='2xl:text-xl lg:text-base xl:text-[18px] 2xl:px-20 px-8 text-justify indent-10'>To showcase my talents and build my portfolio for future endeavors, I've created the Triple7Tatou website. It serves as a platform for prospective clients to view my work and will also be a valuable asset when applying for positions as a main artist at tattoo shops.</p>
         </div>
-        <div className='flex flex-col px-8 lg:px-28 gap-4 w-full text-white lg:text-black'>
+        <div className='flex flex-col px-8 2xl:px-20 gap-4 w-full text-white lg:text-black'>
           <span>Social Media Accounts:</span>
-          <div className='flex w-full gap-4'>
-            <FaFacebookSquare className='size-12 cursor-pointer hover:text-blue-800 duration-300'/>
-            <FaInstagramSquare className='size-12 cursor-pointer hover:text-pink-800 duration-300'/>
+          <div className='flex w-full gap-4 lg:gap-2'>
+            <FaFacebookSquare className='size-12 lg:size-10 2xl:size-12 cursor-pointer hover:text-blue-800 duration-300'/>
+            <FaInstagramSquare className='size-12 lg:size-10 2xl:size-12 cursor-pointer hover:text-pink-800 duration-300'/>
           </div>
         </div>
       </div>

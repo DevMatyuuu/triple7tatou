@@ -5,6 +5,7 @@ import { tattooGalleryCollection } from "../firebase/firebase";
 function useTattooGallery() {
   const [tattooGallery, setTattooGallery] = useState([]);
   const [lastDoc, setLastDoc] = useState(null);
+  
 
   const loadMore = async () => {
     let newQuery = query(tattooGalleryCollection, orderBy("id"), limit(9));

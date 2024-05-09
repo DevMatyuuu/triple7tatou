@@ -8,12 +8,15 @@ import {
 } from "@material-tailwind/react";
 import Lottie from 'lottie-react';
 import loader from '../assets/T7T-loader.json'
+import useUserLoggedIn from '../hooks/useUserLoggedIn';
 
 export default function TattooGallery() {
   const [open, setOpen] = useState(false);
   const [selectedTattooValue, setSelectedTattoovalue] = useState()
 
   const { tattooGallery, loadMore } = useTattooGallery();
+  const { user } = useUserLoggedIn();
+
 
   const handleOpen = (id) => {
     setOpen(!open)
@@ -50,10 +53,10 @@ export default function TattooGallery() {
             <button onClick={loadMore} className='bg-white px-8 py-4 text-black font-semibold hover:bg-white/50 duration-300 hover:text-white'>Load more</button>
         </div>
         <div className='relative'>
-          <Dialog open={open} handler={handleOpen} className='fixed inset-0 flex flex-col items-center xl:py-14 xl:px-14 xl:h-[900px] h-auto w-auto max-w-max mx-auto justify-center my-auto outline-none bg-black xl:bg-[#3d3c3d]'>
+          <Dialog open={open} handler={handleOpen} className='fixed inset-0 flex flex-col items-center xl:py-14 xl:px-14 xl:h-[900px] h-auto w-full lg:max-w-max mx-auto justify-center my-auto outline-none bg-black xl:bg-[#3d3c3d]'>
             <IoClose onClick={handleClose} className='absolute xl:top-3 xl:right-4 top-6 right-5 text-white size-8 z-50 cursor-pointer hover:text-red-500'/>
-            <DialogBody className='h-full w-auto items-center flex'>
-              <img src={selectedTattooValue?.image} className='xl:h-full h-max w-full'/>
+            <DialogBody className='h-full w-full items-center flex'>
+              <img src={selectedTattooValue?.image} className='xl:h-full h-auto w-full'/>
             </DialogBody>
           </Dialog>
         </div>

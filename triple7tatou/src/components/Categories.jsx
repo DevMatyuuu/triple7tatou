@@ -12,7 +12,7 @@ export default function Categories() {
 
   return (
     <div>
-      <div className='flex lg:flex-row flex-col items-center justify-between lg:h-[500px] w-full font-[Engraver]'>
+      <div className='flex lg:flex-row flex-col items-center justify-between 2xl:h-[500px] lg:h-[350px] xl:h-[400px] w-full font-[Engraver]'>
         {tattooCategories.map((category)  => (
           <Link to={`/tattoo/${category.label}`} onClick={scrollToTop} className='flex justify-center items-center lg:border-r-4 lg:border-b-0 border-b-4 border-black w-full group overflow-hidden duration-500 cursor-pointer h-full'>
             <img src={category.image} loading='lazy' alt={category.label} className='h-full w-full group-hover:scale-110 duration-500 group-hover:brightness-75 brightness-50'/>
