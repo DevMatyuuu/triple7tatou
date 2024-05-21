@@ -46,9 +46,14 @@ export default function PiercingGallery() {
             </div>
           ))}
         </div>
+        {selectedCategory.length < 9 
+        ? 
+        '' 
+        :
         <div className='mx-auto'>
             <button onClick={loadMore} className='bg-white px-8 py-4 text-black font-semibold hover:bg-white/50 duration-300 hover:text-white'>Load more</button>
         </div>
+        }
         <div className='relative'>
           <Dialog open={open} handler={handleOpen} className='fixed inset-0 flex flex-col items-center xl:py-14 xl:px-14 xl:h-[900px] h-auto w-auto max-w-max mx-auto justify-center my-auto outline-none bg-black xl:bg-[#3d3c3d]'>
             <IoClose onClick={handleClose} className='absolute xl:top-3 xl:right-4 top-6 right-5 text-white size-8 z-50 cursor-pointer hover:text-red-500'/>
