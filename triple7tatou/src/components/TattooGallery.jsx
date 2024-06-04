@@ -49,7 +49,7 @@ export default function TattooGallery() {
             </div>
           ))}
         </div>
-        {selectedCategory.length < 9 
+        {tattooGallery.length < 9 
         ? 
         '' 
         :

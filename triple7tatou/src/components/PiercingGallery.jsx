@@ -46,7 +46,7 @@ export default function PiercingGallery() {
             </div>
           ))}
         </div>
-        {selectedCategory.length < 9 
+        {piercingGallery.length < 9 
         ? 
         '' 
         :

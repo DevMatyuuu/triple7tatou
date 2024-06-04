@@ -6,6 +6,8 @@ import { motion } from 'framer-motion'
 import { Link as Smooth } from 'react-scroll'
 import { Link } from 'react-router-dom'
 import { MdKeyboardArrowDown } from "react-icons/md";
+import Promos from './Promos'
+import usePromo from '../hooks/usePromo'
 
 export default function Navbar() {
   const [isScroll, setIsScroll] = useState(false);
@@ -13,7 +15,8 @@ export default function Navbar() {
   const [prevScrollPos, setPrevScrollPos] = useState(0);
   const [open, setOpen] = useState(false)
   const [openServices, setOpenServices] = useState(true)
-  
+
+  const { promos } = usePromo();
 
   useEffect(() => {
     window.addEventListener("scroll", navBG);
@@ -52,8 +55,13 @@ export default function Navbar() {
     initial={{ opacity: 1 }}
     animate={{ opacity: isNavbarVisible ? 1 : 0 }}
     transition={{ duration: 0.3 }} 
-    className={`${window.scrollY >= 80 ? 'text-white bg-[#3d3c3d] duration-500' : 'text-white bg-transparent'} z-50 text-base flex fixed py-4 lg:py-4 px-8 lg:px-0 w-full text-white`}>
-      <div className='flex lg:justify-center justify-between items-center w-full gap-28'>
+    className={`${window.scrollY >= 80 ? 'text-white bg-[#3d3c3d] duration-500' : 'text-white bg-transparent'} z-50 text-base flex flex-col fixed pb-4 lg:py-0 lg:pb-4 lg:px-0 w-full text-white`}>
+      {promos.length == 0 
+      ? '' 
+      :
+      <Promos promos={promos} />
+      }
+      <div className='flex lg:justify-center justify-between items-center w-full gap-28 lg:mt-5 mt-5 px-8 lg:px-0'>
         <div className='hidden lg:flex items-center gap-28 uppercase'>
             <Link to={'/'} onClick={scrollToTop} className='cursor-pointer hover:text-red-500 duration-300'>
               Home

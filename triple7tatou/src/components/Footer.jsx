@@ -27,8 +27,13 @@ return (
             <span>09310017746</span>
           </div>
         </div>
-        <div className='lg:w-[20%]'>
+        <div className='flex flex-col items-center gap-4 lg:w-[20%]'>
           <span className='font-[Engraver] text-3xl'>Socials</span>
+          <div className='flex flex-col'>
+            <span>Triple7Tatou</span>
+            <span className=''>https://www.facebook.com
+            /MjTatooartist777</span>
+          </div>
         </div>
         <img src={logo} alt='logo' className='lg:hidden block h-28'/>
       </div>

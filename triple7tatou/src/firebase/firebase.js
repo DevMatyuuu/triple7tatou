@@ -21,3 +21,4 @@ export const servicesCollection = collection(db, 'services');
 export const tattooCategoriesCollection = collection(db, 'tattooCategories');
 export const tattooGalleryCollection = collection(db, 'tattooGallery');
 export const piercingGalleryCollection = collection(db, 'piercingGallery');
+export const promoCollection = collection(db, 'promo');
