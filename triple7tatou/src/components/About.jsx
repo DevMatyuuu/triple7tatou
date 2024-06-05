@@ -23,8 +23,8 @@ export default function About() {
         <div className='flex flex-col px-8 2xl:px-20 gap-4 w-full text-white lg:text-black'>
           <span>Social Media Accounts:</span>
           <div className='flex w-full gap-4 lg:gap-2'>
-            <FaFacebookSquare className='size-12 lg:size-10 2xl:size-12 cursor-pointer hover:text-blue-800 duration-300'/>
-            <FaInstagramSquare className='size-12 lg:size-10 2xl:size-12 cursor-pointer hover:text-pink-800 duration-300'/>
+            <a href='https://www.facebook.com/mj.moreno.393'><FaFacebookSquare className='size-12 lg:size-10 2xl:size-12 cursor-pointer hover:text-blue-800 duration-300'/></a>
+            <a href='https://www.instagram.com/immjee/'><FaInstagramSquare className='size-12 lg:size-10 2xl:size-12 cursor-pointer hover:text-pink-800 duration-300'/></a>
           </div>
         </div>
       </div>

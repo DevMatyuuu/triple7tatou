@@ -39,7 +39,7 @@ export default function TattooGallery() {
   console.log(categorizedTattoosValue)
 
   return (
-    <div className='flex flex-col justify-center items-center gap-16 xl:gap-0 lg:px-0 px-8 bg-black text-white h-auto xl:pt-48 xl:py-0 py-36 w-full mx-w-[800px]'>
+    <div className='flex flex-col justify-center items-center gap-16 xl:gap-0 lg:px-0 px-8 bg-black text-white h-auto xl:pt-48 xl:py-10 py-36 w-full mx-w-[800px]'>
         <h1 className={`${!open ? '' : 'brightness-50'} mx-auto lg:text-7xl text-5xl font-[Engraver] xl:mb-16`}>Tattoo Gallery</h1>
         <div className='xl:w-[1120px] xl:mb-10'>
           <ul className='flex lg:gap-5 lg:text-xl'>
@@ -75,7 +75,7 @@ export default function TattooGallery() {
             <div key={tattoo.id} onClick={() => handleOpen(tattoo.id)} className='flex justify-center lg:justify-start items-center mx-auto lg:mx-0 border-[#3d3c3d] border-[10px] xl:h-[400px] xl:w-[350px] lg:h-auto lg:w-auto h-80 w-80 relative group overflow-hidden z-30'>
               {tattoo.image 
               ? 
-              <img src={tattoo.image} alt={tattoo.id} className='xl:h-full xl:w-full object-cover lg:h-80 h-auto w-auto group-hover:brightness-75 cursor-pointer duration-300 group-hover:scale-105' /> 
+              <img src={tattoo.image} alt={tattoo.id} className='xl:h-full xl:w-full lg:w-full object-cover lg:h-80 h-auto w-auto group-hover:brightness-75 cursor-pointer duration-300 group-hover:scale-105' /> 
               :
               <Lottie animationData={loader}/>
               }
