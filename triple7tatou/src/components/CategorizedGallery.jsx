@@ -10,7 +10,7 @@ import { useParams } from 'react-router-dom';
 
 export default function CategorizedGallery() {
   const [open, setOpen] = useState(false);
-  const [selectedTattooValue, setSelectedTattoovalue] = useState()
+  const [selectedTattooValue, setSelectedTattoovalue] = useState([])
 
   const { tattooGallery, loadMore } = useTattooGallery();
 
@@ -26,6 +26,8 @@ export default function CategorizedGallery() {
   const { label } = useParams();
 
   const selectedCategory = tattooGallery.filter( tattoo => tattoo.category === label)
+
+  console.log(selectedCategory)
 
   return (
     <div className='flex flex-col justify-center items-center gap-16 xl:gap-28 lg:px- px-8 bg-black text-white h-auto xl:pt-48 xl:py-0 py-36 w-full mx-w-[800px]'>

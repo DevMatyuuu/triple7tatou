@@ -1,8 +1,9 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import Marquee from "react-fast-marquee";
 import announceIcon from '../assets/icon-announce.webp'
 
 export default function Promos({promos}) {
+  const [isScroll, setIsScroll] = useState(false);
 
   useEffect(() => {
     window.addEventListener("scroll", navBG);
